@@ -1,0 +1,143 @@
+.featured-section {
+    padding: 3rem 1rem;
+  }
+
+  body.dark .featured-section {
+    background-color: #333;
+  }
+  
+  .featured-title {
+    font-family: 'Didot', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #B76E79;
+  }
+  
+  .featured-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  body.dark .featured-card {
+    background: #222;
+  }
+  
+  .featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .featured-card img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .featured-card-body {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .featured-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #844F57;
+  }
+  
+  .featured-price {
+    color: #777;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .featured-button {
+    background-color: #fff;
+    border: none;
+    color: #9A5C65;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .featured-button:hover {
+    background-color: #844F57;
+    color: #fff;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 300px; /* or any fixed height */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  
+
+
+
+  .layer { 
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6) ,#9A5C65);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 0 40px; */
+    text-align: center;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+.featured-card:hover .layer { 
+    height: 100%;
+
+}
+
+.add-btn {
+    display: flex;
+    white-space: nowrap;
+    background: none;
+    padding: 0.5rem;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    gap: 5px;
+    /* overflow-wrap: break-word; */
+    width: 100%;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+
+}
+
+.add-btn button {
+    background: #fff;
+    color: #9A5C65;
+    border: #844F57 solid 1px;
+}
+
+.add-btn button:hover{
+    color: #fff;
+    background: #844F57;
+}
+
+@media (max-width: 700px) {
+  .add-btn {
+    flex-direction: column;
+    gap: 10px;
+
+
+  }
+  
+}

@@ -1,0 +1,42 @@
+.card-img-top {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); */
+  cursor: pointer;
+}
+
+.product-card .card-title {
+  font-family: 'Playfair Display', serif;
+}
+
+.product-card .card-text {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body.dark .card-title{
+  color: #eee;
+}
+
+body.dark .card-text{
+  color: #edebeb;
+}
+
+  

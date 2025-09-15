@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environment
+appenv/
+venv/
+ENV/
+env/
+.venv/
+
+# Django
+/media/
+staticfiles/
+*.log
+
+# React
+node_modules/
+build/
+dist/
+
+# Environment variables
+.env

@@ -1,0 +1,50 @@
+.newsletter-section {
+    background: linear-gradient(90deg, #B76E79, #844F57, #513136);
+    padding: 4rem 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .newsletter-title {
+    font-family: 'Didot', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .newsletter-form input {
+    padding: 0.8rem 1rem;
+    width: 300px;
+    max-width: 100%;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .newsletter-form button {
+    background-color: #9A5C65;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #844F57;
+  }
+  

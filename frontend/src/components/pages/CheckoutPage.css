@@ -1,0 +1,45 @@
+body.dark .checkout-container {
+    background: #333;
+    color: #eee;
+}
+
+.stripe-img {
+    height: 20px;
+    width: 25px;
+    border-radius: 8px;
+}
+.paystack-img {
+    height: 20px;
+    width: 65px;
+    border-radius: 8px;
+}
+
+.order-btn {
+    background: #9A5C65;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+
+
+
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(10deg);
+    }
+  }
+  
+  .emoji-bounce {
+    display: inline-block;
+    animation: bounce 1s infinite;
+  }
+  
