@@ -28,7 +28,7 @@ Features
 
 Auth: JWT
 
-. Database: SQLite (default, can be swapped for Postgres/MySQL)
+- Database: SQLite (default, can be swapped for Postgres/MySQL)
 
 Payment Flow
 
