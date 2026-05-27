@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import axios from '../../services/axiosInstance';
 import { FaShoppingBag, FaHeart, FaUser, FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
@@ -92,10 +92,10 @@ function Navbar() {
 
         {/* ── Desktop nav links ── */}
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/products">Collections</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><NavLink to="/" end>Home</NavLink></li>
+          <li><NavLink to="/products">Collections</NavLink></li>
+          <li><NavLink to="/about">About Us</NavLink></li>
+          <li><NavLink to="/contact">Contact</NavLink></li>
         </ul>
 
         {/* ── Right icons ── */}
@@ -211,10 +211,10 @@ function Navbar() {
             <button className="sidebar-close" onClick={() => setShowSidebar(false)}><FaTimes /></button>
             <Link to="/" className="nav-logo sidebar-logo">ELEGANT</Link>
             <nav className="sidebar-nav">
-              <Link to="/" onClick={() => setShowSidebar(false)}>Home</Link>
-              <Link to="/products" onClick={() => setShowSidebar(false)}>Collections</Link>
-              <Link to="/about" onClick={() => setShowSidebar(false)}>About Us</Link>
-              <Link to="/contact" onClick={() => setShowSidebar(false)}>Contact</Link>
+              <NavLink to="/" end onClick={() => setShowSidebar(false)}>Home</NavLink>
+              <NavLink to="/products" onClick={() => setShowSidebar(false)}>Collections</NavLink>
+              <NavLink to="/about" onClick={() => setShowSidebar(false)}>About Us</NavLink>
+              <NavLink to="/contact" onClick={() => setShowSidebar(false)}>Contact</NavLink>
               <div className="sidebar-divider" />
               {isLoggedIn ? (
                 <>
