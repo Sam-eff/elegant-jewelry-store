@@ -1,109 +1,262 @@
+/* Luxury Design System and Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-bg-primary: #faf8f5; /* Warm Alabaster White */
+  --color-bg-secondary: #f4f0ea; /* Luxurious Cashmere Cream */
+  --color-bg-tertiary: #eae4d9; /* Soft Warm Linen */
+  --color-accent: #b89528; /* Polished Champagne Gold */
+  --color-accent-hover: #9e7f1f; /* Elegant Bronze Gold */
+  --color-accent-rgb: 184, 149, 40;
+  --color-text-primary: #1c1c1c; /* Deep Charcoal Onyx */
+  --color-text-secondary: #5a5a5a; /* Soft Slate */
+  --color-text-muted: #9b9b9b; /* Warm Gray */
+  --color-border: #e8e2d5; /* Soft Sand Border */
+  --color-border-gold: rgba(184, 149, 40, 0.25);
+  --color-card-bg: #ffffff; /* Pristine Alabaster Card */
+  --color-success: #10b981;
+  --color-danger: #ef4444;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --shadow-sm: 0 2px 8px rgba(28, 28, 28, 0.04);
+  --shadow-md: 0 8px 24px rgba(28, 28, 28, 0.06);
+  --shadow-lg: 0 16px 40px rgba(28, 28, 28, 0.08);
+  --shadow-gold: 0 0 20px rgba(184, 149, 40, 0.04);
+  --shadow-gold-hover: 0 0 35px rgba(184, 149, 40, 0.18);
+
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s var(--transition-smooth), color 0.5s var(--transition-smooth);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-tertiary);
+  border-radius: 10px;
+  border: 3px solid var(--color-bg-primary);
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .luxury-heading {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
-
-a {
+/* Common UI Utilities */
+.btn-luxury {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background: #fff;
-  color: #111;
-  transition: background 0.3s, color 0.3s;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 0.9rem 2.4rem;
+  border: 1px solid var(--color-accent);
+  background-color: transparent;
+  color: var(--color-text-primary);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-body.dark {
-  background: #111;
-  color: #eee;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar {
-  background: #eee;
-  padding: 1rem;
+.btn-luxury::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: skewX(-20deg);
 }
 
-body.dark .navbar {
-  background: #222;
+.btn-luxury:hover {
+  background-color: var(--color-accent);
+  color: #000000 !important;
+  box-shadow: var(--shadow-gold-hover);
+  transform: translateY(-2px);
+  letter-spacing: 0.25em;
 }
 
-.mode-toggle {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
+.btn-luxury:hover::after {
+  left: 150%;
 }
 
-.mode-toggle {
-  background: none;
-}
-.mode-toggle .dark {
-  background: none;
-  color: #eee;
-}
-.mode-toggle .light {
-  background: none;
-  color: #111;
+.btn-luxury-solid {
+  background: linear-gradient(135deg, #f5e2b3 0%, #d4af37 50%, #aa7c11 100%);
+  color: #000000 !important;
+  border: none;
+  font-weight: 600;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.btn-luxury-solid:hover {
+  background: transparent;
+  color: var(--color-text-primary) !important;
+  box-shadow: var(--shadow-gold-hover);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-luxury:disabled {
+  border-color: var(--color-text-muted);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+/* Card Styling (Glassmorphism & Gold Borders) */
+.luxury-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-gold-hover);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 149, 40, 0.15);
+}
+
+/* Custom form styling */
+.luxury-input {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  border-radius: 0;
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.luxury-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* Page Section Wrappers */
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+.section-title-wrapper {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: var(--color-text-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+/* Bootstrap Overrides */
+.modal-content {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-accent) !important;
+  border-radius: 0 !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--color-border) !important;
+}
+
+.spinner-border {
+  color: var(--color-accent) !important;
 }

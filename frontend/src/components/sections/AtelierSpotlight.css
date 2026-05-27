@@ -1,0 +1,193 @@
+.atelier-spotlight-section {
+  background-color: var(--color-bg-primary);
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.atelier-spotlight-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(184, 149, 40, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.atelier-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.atelier-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .atelier-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+.atelier-story-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.atelier-subtitle {
+  font-family: var(--font-sans);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.atelier-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.atelier-ornament {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.atelier-description {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.atelier-description.secondary {
+  font-size: 0.95rem;
+  color: #8c8c8c;
+  margin-bottom: 2.5rem;
+}
+
+.atelier-btn-wrapper {
+  display: flex;
+}
+
+/* Visual Block with Frame Styling */
+.atelier-visual-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.atelier-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid rgba(184, 149, 40, 0.15);
+  padding: 1.25rem;
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-smooth);
+}
+
+.atelier-image-frame:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-gold-hover);
+}
+
+.atelier-frame-accent-corner {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-color: var(--color-accent);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.atelier-frame-accent-corner.top-left {
+  top: -5px;
+  left: -5px;
+  border-width: 2px 0 0 2px;
+}
+
+.atelier-frame-accent-corner.bottom-right {
+  bottom: -5px;
+  right: -5px;
+  border-width: 0 2px 2px 0;
+}
+
+.atelier-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(0.95);
+  transition: var(--transition-smooth);
+}
+
+.atelier-image-frame:hover .atelier-image {
+  filter: contrast(1.08) brightness(1.02);
+}
+
+/* Floating Glassmorphism Badge */
+.atelier-floating-glass-badge {
+  position: absolute;
+  bottom: -25px;
+  left: -25px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 149, 40, 0.35);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  min-width: 110px;
+}
+
+@media (max-width: 480px) {
+  .atelier-floating-glass-badge {
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+.atelier-floating-glass-badge .badge-title {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--color-text-secondary);
+}
+
+.atelier-floating-glass-badge .badge-year {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 0.15rem;
+}

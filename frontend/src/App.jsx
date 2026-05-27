@@ -4,24 +4,25 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { ToastContainer } from 'react-toastify';
-import Home from './components/pages/Home';
-import Login from './components/auth/Login';
-import Signup from './components/auth/Signup';
-import Profile from './components/auth/Profile';
-import RequireAuth from './components/auth/RequireAuth';
-import ProductsPage from './components/pages/ProductsPage';
-import Wishlist from './components/pages/Wishlist';
-import Layout from './components/layouts/Layout';
-import { useAuthStore } from './components/auth/useAuthStore';
-import CartPage from './components/pages/CartPage';
-import CheckoutPage from './components/pages/CheckoutPage';
-import ProductDetailPage from './components/pages/ProductDetailPage';
-import CategoryProducts from './components/pages/CategoryPage';
-import SearchResultsPage from './components/pages/SearchResultsPage';
-import AboutPage from './components/pages/AboutPage';
-import ContactPage from './components/pages/ContactPage';
-import MyOrders from './components/pages/MyOdersPage';
-import OrderSuccessPage from './components/pages/OrderSuccessPage';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Profile from './pages/Profile';
+import RequireAuth from './pages/RequireAuth';
+import ProductsPage from './pages/ProductsPage';
+import Wishlist from './pages/Wishlist';
+import Layout from './components/common/Layout';
+import { useAuthStore } from './store/useAuthStore';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import CategoryProducts from './pages/CategoryPage';
+import SearchResultsPage from './pages/SearchResultsPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import MyOrders from './pages/MyOrdersPage';
+import OrderSuccessPage from './pages/OrderSuccessPage';
+
 
 
 function App() {

@@ -1,0 +1,204 @@
+.featured-section {
+  background-color: var(--color-bg-primary);
+}
+
+.featured-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.luxury-featured-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.featured-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.featured-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+/* Action Overlay */
+.featured-action-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(250, 248, 245, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.action-buttons-group {
+  display: flex;
+  gap: 1rem;
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+}
+
+.action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-size: 1rem;
+}
+
+.action-btn:hover {
+  background-color: var(--color-accent);
+  color: #000000;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-gold-hover);
+}
+
+.action-btn.active {
+  background-color: var(--color-accent);
+  color: #000000;
+  border-color: var(--color-accent);
+}
+
+/* Badge */
+.featured-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.35rem 0.75rem;
+}
+
+/* Info Section */
+.featured-info {
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.product-card-category {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: all 0.3s ease;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.featured-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+  transition: var(--transition-fast);
+}
+
+.featured-divider {
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-border-gold);
+  margin: 0.75rem auto;
+  transition: var(--transition-smooth);
+}
+
+.featured-price-tag {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+/* Hovers */
+.luxury-featured-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-gold-hover);
+}
+
+.luxury-featured-card:hover .featured-image {
+  transform: scale(1.08);
+}
+
+.luxury-featured-card:hover .featured-action-overlay {
+  opacity: 1;
+}
+
+.luxury-featured-card:hover .action-buttons-group {
+  transform: translateY(0);
+}
+
+.luxury-featured-card:hover .featured-name {
+  color: var(--color-accent-hover);
+}
+
+.luxury-featured-card:hover .featured-divider {
+  width: 60px;
+  background-color: var(--color-accent);
+}

@@ -1,0 +1,113 @@
+.contact-page {
+  background-color: var(--color-bg-primary);
+}
+
+.contact-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Split Layout */
+.contact-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .contact-main-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.luxury-contact-card {
+  padding: 3rem;
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 576px) {
+  .luxury-contact-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.contact-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.luxury-contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right Column Concierge Directory */
+.concierge-details-card {
+  padding: 3rem;
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 576px) {
+  .concierge-details-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.directory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.directory-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.directory-icon {
+  font-size: 1.15rem;
+  color: var(--color-accent);
+}
+
+.directory-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.directory-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.directory-val {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+}
+
+/* Map Frame */
+.contact-map-frame {
+  width: 100%;
+  height: 250px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.contact-map-frame iframe {
+  filter: grayscale(1) opacity(0.85);
+  border: none;
+}
